@@ -7,18 +7,18 @@ import {
 import HeaderLayout from "./layouts/HeaderLayout";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<HeaderLayout/>}>
-      <Route index element={<Home />} />
-      <Route path="shop" element={<Shop />} />
-    </Route>
-  )
-);
+import { useState } from "react";
 
 function App() {
-  return <RouterProvider router={router} />
+  const [cartItems, setCartItems] = useState(0);
+  return <RouterProvider router={createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<HeaderLayout/>}>
+        <Route index element={<Home />} />
+        <Route path="shop" element={<Shop cartItems={cartItems}/>} />
+      </Route>
+    )
+  )} />
 }
 
 export default App;
