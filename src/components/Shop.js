@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Card from "./Card";
 import uniqid from "uniqid";
 
-function Shop() {
+function Shop(props) {
+  const { cartItems, setCartItems } = props;
   const [cards, setCards] = useState([
     { id: uniqid() },
     { id: uniqid() },
@@ -10,7 +11,9 @@ function Shop() {
   ]);
   return (
     <div>
-      {cards.map((card) => (<Card key={card.id} />))}
+      {cards.map((card) => (
+        <Card key={card.id} setCartItems={setCartItems} cartItems={cartItems} />
+      ))}
     </div>
   );
 }

@@ -11,14 +11,23 @@ import { useState } from "react";
 
 function App() {
   const [cartItems, setCartItems] = useState(0);
-  return <RouterProvider router={createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<HeaderLayout/>}>
-        <Route index element={<Home />} />
-        <Route path="shop" element={<Shop cartItems={cartItems}/>} />
-      </Route>
-    )
-  )} />
+  return (
+    <RouterProvider
+      router={createBrowserRouter(
+        createRoutesFromElements(
+          <Route path="/" element={<HeaderLayout cartItems={cartItems} />}>
+            <Route index element={<Home />} />
+            <Route
+              path="shop"
+              element={
+                <Shop cartItems={cartItems} setCartItems={setCartItems} />
+              }
+            />
+          </Route>
+        )
+      )}
+    />
+  );
 }
 
 export default App;

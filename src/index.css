@@ -15,8 +15,17 @@ code {
 .card {
   width: 200px;
   height: 200px;
-  background-color: red;
   border-color: black;
   border-width: 1px;
   border-style: solid;
+}
+
+.div-product-image {
+  width: 200px;
+  height: 150px; 
+  background-color: blue;
+}
+
+.btn-add {
+  
 }
