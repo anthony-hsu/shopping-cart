@@ -10,22 +10,47 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} 
 
-.card {
-  width: 200px;
-  height: 200px;
+.div-product-image {
   border-color: black;
+  border-radius: 2px;
   border-width: 1px;
   border-style: solid;
 }
 
-.div-product-image {
-  width: 200px;
-  height: 150px; 
-  background-color: blue;
+.div-shop {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 500px 500px;
+}
+
+.card {
+  grid-row: span / 1;
+  grid-column: span / 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-product {
+  flex: 6 0 auto;
+}
+
+.p-product-title {
+  font-weight: bold;
+}
+
+.div-add-item {
+  display: flex;
+}
+
+.input-add {
+  flex: 1 0 auto;
 }
 
 .btn-add {
-  
+  flex: 1 0 auto;
 }
