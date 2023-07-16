@@ -20,7 +20,7 @@ function App() {
             path="/"
             element={<HeaderLayout cartItems={cartItems} title={pageTitle} />}
           >
-            <Route index element={<Home />} />
+            <Route index element={<Home title={pageTitle}/>} />
             <Route
               path="shop"
               element={
