@@ -28,22 +28,28 @@ code {
 .card {
   grid-row: span / 1;
   grid-column: span / 1;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80% 10% 10%;
 }
 
 .img-product {
-  flex: 6 0 auto;
+  width: 100%;
+  max-height: 100%;
+  grid-column: auto;
+  grid-row: span / 1;
 }
 
 .p-product-title {
+  text-align: center;
   font-weight: bold;
+  grid-column: auto;
+  grid-row: span / 1;
 }
 
 .div-add-item {
+  grid-column: auto;
+  grid-row: span / 1;
   display: flex;
 }
 
@@ -53,4 +59,46 @@ code {
 
 .btn-add {
   flex: 1 0 auto;
+}
+
+.header-layout {
+  background-color: rgb(25, 59, 93);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-title {
+  flex: 1 0 auto;
+  padding: 0 1rem;
+  color: white;
+  margin: 0;
+}
+
+.nav-pages {
+  flex: 10 0 auto;
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.nav-pages a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.nav-pages a:hover {
+  background-color: slateblue;
+}
+
+.nav-cart {
+  flex: 1 0 auto;
+  color: white;
+  margin: 0
 }

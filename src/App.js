@@ -10,12 +10,16 @@ import Shop from "./components/Shop";
 import { useState } from "react";
 
 function App() {
+  const pageTitle = "Fruits Basket";
   const [cartItems, setCartItems] = useState(0);
   return (
     <RouterProvider
       router={createBrowserRouter(
         createRoutesFromElements(
-          <Route path="/" element={<HeaderLayout cartItems={cartItems} />}>
+          <Route
+            path="/"
+            element={<HeaderLayout cartItems={cartItems} title={pageTitle} />}
+          >
             <Route index element={<Home />} />
             <Route
               path="shop"

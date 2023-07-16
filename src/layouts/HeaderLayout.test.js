@@ -3,16 +3,17 @@ import "@testing-library/jest-dom";
 import HeaderLayout from "./HeaderLayout";
 import { BrowserRouter } from "react-router-dom";
 
-const MockHeader = () => {
+const MockHeader = ({title}) => {
   return (
     <BrowserRouter>
-      <HeaderLayout />
+      <HeaderLayout title={title}/>
     </BrowserRouter>
    );
 };
 
 it("should render header title", async () => {
-  render(<MockHeader />);
-  const headingElement = screen.getByText(/shopping cart/i);
+  const pageTitle = "Fruits Basket";
+  render(<MockHeader title={pageTitle}/>);
+  const headingElement = screen.getByText(/Fruits Basket/i);
   expect(headingElement).toBeInTheDocument();
 });
