@@ -90,7 +90,7 @@ code {
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
 }
 
 .nav-pages a:hover {
