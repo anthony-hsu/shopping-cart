@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import HeaderLayout from "./HeaderLayout";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 const MockHeader = ({title}) => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <HeaderLayout title={title}/>
-    </BrowserRouter>
+    </HashRouter>
    );
 };
 

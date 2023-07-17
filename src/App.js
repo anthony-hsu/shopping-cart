@@ -1,5 +1,5 @@
 import {
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
@@ -14,13 +14,13 @@ function App() {
   const [cartItems, setCartItems] = useState(0);
   return (
     <RouterProvider
-      router={createBrowserRouter(
+      router={createHashRouter(
         createRoutesFromElements(
           <Route
             path="/"
             element={<HeaderLayout cartItems={cartItems} title={pageTitle} />}
           >
-            <Route index element={<Home title={pageTitle}/>} />
+            <Route index element={<Home title={pageTitle} />} />
             <Route
               path="shop"
               element={
